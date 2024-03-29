@@ -1,5 +1,7 @@
 package xyz.ielis.use_modular_phenol;
 
+import org.monarchinitiative.phenol.io.MinimalOntologyLoader;
+import org.monarchinitiative.phenol.ontology.data.MinimalOntology;
 import picocli.CommandLine;
 
 import java.nio.file.Path;
@@ -19,6 +21,7 @@ public class Main implements Callable<Integer> {
     public static final String FOOTER = "That's all folks";
 
     @CommandLine.Parameters(
+            arity = "1",
             description = "Path to obographs JSON file (default: ${DEFAULT-VALUE})."
     )
     public Path path = null;
@@ -45,7 +48,12 @@ public class Main implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         // work done in subcommands
-        System.err.println("Hey!");
+        System.err.printf("Loading from %s%n", path);
+        MinimalOntology hpo = MinimalOntologyLoader.loadOntology(path.toFile());
+
+        System.err.printf("Loaded HPO %s%n", hpo.version().get());
+        System.err.printf("There are %d terms%n", hpo.getTerms().size());
+
         return 0;
     }
 }
