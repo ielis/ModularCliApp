@@ -39,3 +39,5 @@ Now we can run the app using the driver script `run.sh`:
 ```
 
 Or `run.cmd` on Windows (untested).
+
+The driver scripts assume that `java` is set up on your system.
