@@ -1,6 +1,6 @@
-module xyz.ielis.use_modular_phenol {
+module modular_app {
     requires info.picocli;
     requires org.monarchinitiative.phenol.io;
 
-    exports xyz.ielis.use_modular_phenol to info.picocli;
+    exports xyz.ielis.modular_app to info.picocli;
 }

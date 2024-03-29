@@ -1,4 +1,4 @@
-package xyz.ielis.use_modular_phenol;
+package xyz.ielis.modular_app;
 
 import org.monarchinitiative.phenol.io.MinimalOntologyLoader;
 import org.monarchinitiative.phenol.ontology.data.MinimalOntology;
@@ -7,8 +7,8 @@ import picocli.CommandLine;
 import java.nio.file.Path;
 import java.util.concurrent.Callable;
 
-@CommandLine.Command(name = "test-phenol",
-        header = "Test modular phenol\n",
+@CommandLine.Command(name = "Modular CLI App",
+        header = "Load HPO JSON file using phenol\n",
         mixinStandardHelpOptions = true,
         usageHelpWidth = 120)
 public class Main implements Callable<Integer> {
